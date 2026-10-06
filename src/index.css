@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --figma-bg-app: #0e0e11;
+    --figma-bg-primary: #18181b;
+    --figma-bg-secondary: #1e1e24;
+    --figma-bg-tertiary: #27272e;
+    --figma-bg-hover: #2e2e38;
+    --figma-bg-active: #383844;
+    --figma-bg-selected: #0d99ff;
+    --figma-bg-canvas: #1e1e1e;
+
+    --figma-border-subtle: rgba(255, 255, 255, 0.05);
+    --figma-border-default: #2a2a32;
+    --figma-border-strong: #3b3b46;
+    --figma-border-focus: #0d99ff;
+
+    --figma-text-primary: #f4f4f6;
+    --figma-text-secondary: #a1a1aa;
+    --figma-text-muted: #71717a;
+    --figma-text-disabled: #52525b;
+
+    --figma-blue: #0d99ff;
+    --figma-blue-hover: #0c8ce9;
+    --figma-purple: #a855f7;
+    --figma-emerald: #10b981;
+    --figma-amber: #f59e0b;
+    --figma-rose: #f43f5e;
+    --figma-indigo: #6366f1;
+    --figma-cyan: #06b6d4;
+  }
+
+  * {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--figma-bg-app);
+    color: var(--figma-text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.012em;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  input, textarea {
+    user-select: text;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1.5px var(--figma-border-focus);
+  }
+}
+
+/* Figma-accurate ultra-sleek custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #34343d;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4e4e5a;
+}
+
+/* Custom Scrollbar Utility */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #363640;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #525260;
+}
+
+/* Acrylic Glassmorphism & Elevation */
+.figma-glass {
+  background: rgba(22, 22, 27, 0.88);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.figma-glass-elevated {
+  background: rgba(26, 26, 32, 0.94);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.65), 0 8px 20px -3px rgba(0, 0, 0, 0.4);
+}
+
+.figma-glass-dock {
+  background: rgba(24, 24, 30, 0.92);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* Precision Panel Section Headers */
+.figma-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--figma-text-secondary);
+}
+
+/* Precision Micro Input */
+.figma-input {
+  height: 26px;
+  background: #202026;
+  border: 1px solid #2f2f38;
+  border-radius: 5px;
+  padding: 0 7px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #f4f4f6;
+  transition: all 0.12s ease-in-out;
+}
+
+.figma-input:hover {
+  border-color: #42424e;
+  background: #26262e;
+}
+
+.figma-input:focus {
+  border-color: #0d99ff;
+  background: #191920;
+  outline: none;
+  box-shadow: 0 0 0 1.5px rgba(13, 153, 255, 0.35);
+}
+
+/* Micro Button Icon */
+.figma-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  width: 26px;
+  border-radius: 5px;
+  color: var(--figma-text-secondary);
+  transition: all 0.12s ease-in-out;
+}
+
+.figma-btn-icon:hover {
+  background: #2c2c36;
+  color: #ffffff;
+}
+
+.figma-btn-icon:active {
+  transform: scale(0.95);
+}
+
+.figma-btn-icon.active {
+  background: #2c2c36;
+  color: #0d99ff;
+}
+
+/* Segmented Control Pill Button */
+.figma-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 5px;
+  color: var(--figma-text-secondary);
+  transition: all 0.12s ease-in-out;
+}
+
+.figma-pill-btn:hover {
+  color: #f4f4f6;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.figma-pill-btn.active {
+  background: #2c2c36;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Keyboard Shortcut Badge */
+.figma-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Tooltip standard */
+.figma-tooltip {
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+  border-radius: 4px;
+  background: #09090b;
+  border: 1px solid #27272a;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #e4e4e7;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Ripple effect for interactive prototype hits */
+@keyframes prototypeRipple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.prototype-hit-ripple {
+  position: absolute;
+  border-radius: 9999px;
+  border: 2px solid #0d99ff;
+  background: rgba(13, 153, 255, 0.2);
+  pointer-events: none;
+  animation: prototypeRipple 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+/* Pulse animation for collaboration & active elements */
+@keyframes cursorPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.06); }
+}
+
+.cursor-pulse {
+  animation: cursorPulse 2.2s ease-in-out infinite;
+}
+
+/* Shimmer animation for AI generation */
+@keyframes aiShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.ai-shimmer-bg {
+  background: linear-gradient(90deg, rgba(99,102,241,0.15) 0%, rgba(168,85,247,0.3) 50%, rgba(99,102,241,0.15) 100%);
+  background-size: 200% 100%;
+  animation: aiShimmer 2.5s infinite linear;
+}
