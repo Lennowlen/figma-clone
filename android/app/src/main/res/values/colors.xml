@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Figma UI3 Studio</string>
+    <color name="figma_bg">#18181b</color>
+    <color name="figma_surface">#222226</color>
+    <color name="figma_primary">#0c8ce9</color>
+    <color name="figma_border">#333338</color>
+    <color name="figma_text_primary">#f4f4f5</color>
+    <color name="figma_text_secondary">#a1a1aa</color>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.FigmaClone" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:statusBarColor">#1e1e1e</item>
+        <item name="android:navigationBarColor">#1e1e1e</item>
+        <item name="android:windowBackground">#18181b</item>
+    </style>
+</resources>
